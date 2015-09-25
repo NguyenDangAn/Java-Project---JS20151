@@ -1,0 +1,11 @@
+Chức năng chính:
+I) Tại server
+.Quản lý các kết nối đăng nhập hợp lệ của client và liên kết các client với nhau để client có thể thách
+ đấu trực tiếp với nhau.
+.Thực hiện lưu lại tài khoản khi client đăng ký tài khoản mới.
+.Thông báo cho người chơi kết quả của ván chơi
+II) Tại Client
+.Kết nối vào server thông qua tên USER và PASSWORD nếu đã có tài khoản.
+. Nếu không có tài khoản thì phải tạo tài khoản với server.
+.Thực hiện chơi game thông qua giao diện hiển thị trên màn hình.
+.Có thể trò chuyện với đối thủ trong khi chơi game
