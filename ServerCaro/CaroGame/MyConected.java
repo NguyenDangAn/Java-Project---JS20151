@@ -64,10 +64,55 @@ public class MyConected {
 		}
 		return rs;
 	}
+    private void Delete(String id)
+    {
+    	String sqlCmd = "delete from "+ table +" where ID_User = ?";
+    	PreparedStatement pst = null;
+    	try {
+			pst = connection.prepareStatement(sqlCmd);
+			pst.setString(1, id);
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("fail");
+		}
+    }
+    private void Insert(user u)
+    {
+    	String sqlCmd = "insert into "+ table +" value(?, ?, ?)";
+    	PreparedStatement pst = null;
+    	try {
+			pst = connection.prepareStatement(sqlCmd);
+			pst.setInt(1, u.getId());
+			pst.setString(2, u.getUsername());
+			pst.setString(3, u.getPassword());
 
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("fail");
+		}
+    }
+    private void updateid (int  id,user u)
+    {
+    	String sqlCmd = "update "+ table +" set username = ?, password = ? where ID_User = ?";
+    	PreparedStatement pst = null;
+    	try {
+			pst = connection.prepareStatement(sqlCmd);
+			pst.setString(1, u.getUsername());
+			pst.setString(2, u.getPassword());
+			pst.setInt(3, u.getId());
+
+
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("fail");
+		}
+    }
 	public static void main(String[] args) {
 		MyConected myconect = new MyConected();
 		myconect.connect();
-		myconect.showData(myconect.getDataid("2"));
+	//	myconect.showData(myconect.getDataid("2"));
+	//	myconect.Delete("1");
+		//myconect.Insert(new user(4,"quypro","maiyeuc1"));
+		myconect.updateid(1, new user(1,"anbachkhoa","anhan@123456"));
 	}
 }
