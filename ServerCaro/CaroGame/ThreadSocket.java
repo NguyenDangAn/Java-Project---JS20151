@@ -8,7 +8,7 @@ public class ThreadSocket extends Thread {
 	Socket socket;
     int port;
     Database db ;
-    address add;
+    Serveraddress add;
     ThreadSocket(Socket pSocket, int i) {
         this.socket=pSocket;
         port = i;
