@@ -272,7 +272,7 @@ public class CaroServer extends javax.swing.JFrame {
             }
         });
 
-        sendButton.setText("Gá»­i");
+        sendButton.setText("Gửi");
         sendButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sendButtonActionPerformed(evt);
